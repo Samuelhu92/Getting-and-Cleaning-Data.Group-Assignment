@@ -63,27 +63,22 @@ img {
 
 <hr />
 <hr />
-<div id="getting-and-cleaning-data-course-project" class="section level1">
-<h1>Getting and Cleaning Data Course Project</h1>
-<div id="project-of-getting-and-cleaning-data-course-by-samuel-hu-edition-july-2015" class="section level4">
-<h4>Project of <a href="https://class.coursera.org/getdata-030">Getting and cleaning Data Course</a>, by Samuel Hu, edition July 2015</h4>
+<div id="code-book" class="section level1">
+<h1>Code Book</h1>
+<div id="raw-data-collection" class="section level2">
+<h2>Raw Data Collection</h2>
+<div id="collection" class="section level3">
+<h3>Collection</h3>
+<p>Raw data are obtained from UCI Machine Learning repository. In particular we used the Human Activity Recognition Using Smartphones Data Set, that was used by the original collectors to conduct experiments exploiting Support Vector Machine (SVM).</p>
+<p>Activity Recognition (AR) aims to recognize the actions and goals of one or more agents from a series of observations on the agents’ actions and the environmental conditions. The collectors used a sensor based approach employing smartphones as sensing tools. Smartphones are an effective solution for AR, because they come with embedded built-in sensors such as microphones, dual cameras, accelerometers, gyroscopes, etc.</p>
+<p>The data set was built from experiments carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (walking, walking upstairs, walking downstairs, sitting, standing, laying) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, 3-axial linear acceleration and 3-axial angular velocity were captured at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained data set has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.</p>
 </div>
-<div id="project-description" class="section level2">
-<h2>Project Description</h2>
-<p>The purpose of this project is to demonstrate your ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis. You will be graded by your peers on a series of yes/no questions related to the project. You will be required to submit: 1) a tidy data set as described below, 2) a link to a Github repository with your script for performing the analysis, and 3) a code book that describes the variables, the data, and any transformations or work that you performed to clean up the data called CodeBook.md. You should also include a README.md in the repo with your scripts. This repo explains how all of the scripts work and how they are connected.</p>
-<p>One of the most exciting areas in all of data science right now is wearable computing - see for example this article . Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advanced algorithms to attract new users. The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained:</p>
-<p><a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones"><a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones" class="uri">http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones</a></a></p>
-<p>Here are the data for the project:</p>
-<p><a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"><a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip">https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip</a></a></p>
-<p>You should create one R script called run_analysis.R that does the following. <em>Merges the training and the test sets to create one data set. </em>Extracts only the measurements on the mean and standard deviation for each measurement. <em>Uses descriptive activity names to name the activities in the data set </em>Appropriately labels the data set with descriptive variable names. *From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.</p>
+<div id="signals" class="section level3">
+<h3>Signals</h3>
+<p>The 3-axial time domain signals from accelerometer and gyroscope were captured at a constant rate of 50 Hz. Then they were filtered to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals using another filter. Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals. Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm. Finally a Fast Fourier Transform (FFT) was applied to some of these time domain signals to obtain frequency domain signals. The signals were sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window at 50 Hz). From each window, a vector of features was obtained by calculating variables from the time and frequency domain. The set of variables that were estimated from these signals are:</p>
+<p><em>std(): Standard deviation </em>mad(): Median absolute deviation <em>max(): Largest value in array </em>min(): Smallest value in array <em>sma(): Signal magnitude area </em>energy(): Energy measure. Sum of the squares divided by the number of values. <em>iqr(): Interquartile range </em>entropy(): Signal entropy <em>arCoeff(): Autoregression coefficients with Burg order equal to 4 </em>correlation(): Correlation coefficient between two signals <em>maxInds(): Index of the frequency component with largest magnitude </em>meanFreq(): Weighted average of the frequency components to obtain a mean frequency <em>skewness(): Skewness of the frequency domain signal </em>kurtosis(): Kurtosis of the frequency domain signal <em>bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window. </em>angle(): Angle between some vectors.</p>
+<p>No unit of measures is reported as all features were normalized and bounded within [-1,1].</p>
 </div>
-<div id="repository-contents" class="section level2">
-<h2>Repository Contents</h2>
-<ol style="list-style-type: decimal">
-<li><strong>Codebook.md</strong>: information about raw data sets and the transformation.</li>
-<li><strong>Readme.md</strong>: this file.</li>
-<li><strong>run_analysis.R</strong>: a R script to create a tidy required dataset.</li>
-</ol>
 </div>
 </div>
 

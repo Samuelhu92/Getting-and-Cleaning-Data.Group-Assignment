@@ -30,3 +30,13 @@ You should create one R script called run_analysis.R that does the following.
 1. **Codebook.md**: information about raw data sets and the transformation.
 2. **Readme.md**: this file.
 3. **run_analysis.R**: a R script to create a tidy required dataset.
+
+##The way to use script
+
+1. fork and clone this repository: https://github.com/Samuelhu92/Getting-and-Cleaning-Data.Group-Assignment
+2. download compressed raw data from the link above.
+3. unzip raw data and copy the directory `UCI HAR Dataset` to the cloned repository root directory
+4. open a R console and set the working directory to the repository root (use setwd())
+5. source run_analisys.R script (it requires the plyr package): `source('run_analysis.R')`
+
+In the repository root directory you find the file `sensoravg.txt` with the tidy data set.
